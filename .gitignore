@@ -1,0 +1,7 @@
+# Minimal .gitignore for simple Python projects
+__pycache__/
+*.py[cod]
+venv/
+.env
+.pytest_cache/
+.ipynb_checkpoints
