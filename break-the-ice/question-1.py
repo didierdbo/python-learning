@@ -1,4 +1,5 @@
-from utility import performance
+from utility.metrics import performance
+
 
 # Question 1: 
 # Write a program which will find all such numbers which are divisible by 7 
