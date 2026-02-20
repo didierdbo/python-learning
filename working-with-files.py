@@ -1,0 +1,6 @@
+my_file = open('README.md')
+print(my_file.read())
+my_file.seek(0)
+print("************************")
+print(my_file.readline())
+my_file.close()

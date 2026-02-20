@@ -1,9 +1,11 @@
+import pdb
 import sys
 import random
 start = int(sys.argv[1])
 end = int(sys.argv[2])
 answer = random.randint(start, end)
 while True:
+    pdb.set_trace()
     try:
         user_guess = int(input(f'Guess a number between {start} and {end}: '))
         if user_guess == answer:
