@@ -1,0 +1,2 @@
+Hello I'm learning Python programming language.
+It' quite easy and fun !
