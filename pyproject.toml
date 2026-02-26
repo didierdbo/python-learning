@@ -6,7 +6,15 @@ build-backend = "setuptools.build_meta"
 name = "python-learning"
 version = "0.1.0"
 description = "Python learning exercises"
-authors = [{name = "User"}]
+authors = [{name = "Didier Bonnet"}]
+requires-python = ">=3.12"
+dependencies = []
 
 [tool.setuptools]
 packages = ["utility"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ipython>=8.0",
+]

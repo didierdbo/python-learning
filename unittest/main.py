@@ -1,4 +1,4 @@
-def do_stuff(num:0):
+def do_stuff(num: int = 0):
     try:
         if num:
             return int(num) + 5
