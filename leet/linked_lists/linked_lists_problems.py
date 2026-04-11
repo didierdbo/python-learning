@@ -27,7 +27,7 @@ class ListNode:
         return res
 
 @utils.print_result
-def reverse(head:ListNode ) -> ListNode:
+def reverse(head:ListNode) -> ListNode | None:
     prev = None
     curr = head
 
@@ -37,7 +37,7 @@ def reverse(head:ListNode ) -> ListNode:
         prev = curr
         curr = nxt
 
-    return prev # type: ignore
+    return prev 
 
 head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
    
@@ -56,7 +56,7 @@ new_head = reverse(head)
 #   - O(n + m) temps, O(1) espace
 
 @utils.print_result
-def merge(head_a:ListNode, head_b:ListNode ) -> ListNode:
+def merge(head_a:ListNode | None, head_b:ListNode | None) -> ListNode | None:
     dummy = ListNode()
     
     head = dummy
@@ -64,15 +64,15 @@ def merge(head_a:ListNode, head_b:ListNode ) -> ListNode:
         
         if head_a.val < head_b.val:
            head.next = head_a
-           head_a = head_a.next # type: ignore
+           head_a = head_a.next
         else:
            head.next = head_b
-           head_b = head_b.next # type: ignore   
+           head_b = head_b.next   
         
         head = head.next
     head.next = head_a or head_b
            
-    return dummy.next # type: ignore
+    return dummy.next
 
 # Debrief Linked Lists
 
@@ -91,9 +91,9 @@ def merge(head_a:ListNode, head_b:ListNode ) -> ListNode:
 def is_cyclic(head:ListNode) -> bool:
 
     slow, fast = head, head
-    while fast and fast.next:# type: ignore
+    while fast and fast.next:
         slow = slow.next # type: ignore
-        fast = fast.next.next # type: ignore
+        fast = fast.next.next
         if slow == fast:
             return True
         

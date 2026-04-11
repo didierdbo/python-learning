@@ -1,16 +1,9 @@
-from functools import wraps
-def print_result(fn):
-    @wraps(fn)
-    def wrapper(*args, **kwargs):
-        result = fn(*args, **kwargs)
-        print(f"{fn.__name__} : {result}")
-        return result
-    return wrapper
+from utility import utils
 # Problème Easy — Two Sum
 # Etant donné un tableau de nums et un entier target, retourner les indices des deux éléments dont la somme vaut target.
 # Chaque input a exactement une solution. Tu ne peux pas utiliser le même élément deux fois.
 # Exemple: nums = [2, 7, 11, 15], target = 9 -> [0, 1]
-@print_result
+@utils.print_result
 def two_sum(nums, target):
     seen = {}
     for i,num in enumerate(nums):
@@ -34,7 +27,7 @@ two_sum([2, 7, 11, 15], 9)
 # Exemple: strs = ["eat", "tea", "tan", "ate", "nat", "bat"] -> [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
 
 from collections import Counter, defaultdict
-@print_result
+@utils.print_result
 def group_anagrams(strs: list[str]) -> list[list[str]]:
     groups = defaultdict(list)
     for word in strs:
@@ -47,7 +40,7 @@ group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
 # Complexité : O(n * k log k) où k = longueur max d'un mot (à cause du sorted).
 # L'approche O(n * k) utiliserait un comptage de lettres (tuple(Counter(word))) comme clé au lieu de trier, mais en entretien les deux passent
 from collections import Counter, defaultdict
-@print_result
+@utils.print_result
 def group_anagrams_optimized(strs: list[str]) -> list[list[str]]:
     groups = defaultdict(list)
     for word in strs:
